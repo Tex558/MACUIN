@@ -1,0 +1,20 @@
+# Usa una imagen base oficial de Python
+FROM python:3.12-slim
+
+# Establece el directorio de trabajo dentro del contenedor
+WORKDIR /api
+
+# Copia el archivo de requerimientos
+COPY ./api/requirements.txt /api/
+
+# Instala las dependencias
+RUN pip install --no-cache-dir -r /api/requirements.txt
+
+# Copia los archivos desde la carpeta 'api' en tu máquina local al contenedor
+COPY ./api /api/
+
+# Expone el puerto para la API
+EXPOSE 5000
+
+# Comando para ejecutar la API (asegúrate de que el archivo principal sea 'main.py')
+CMD ["python", "/api/main.py"]

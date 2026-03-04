@@ -1,0 +1,32 @@
+# Usa una imagen base oficial de PHP
+FROM php:8.1-fpm
+
+# Establece el directorio de trabajo dentro del contenedor
+WORKDIR /var/www
+
+# Instalar las dependencias del sistema
+RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev zip git
+
+# Instalar las dependencias de Laravel
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg
+RUN docker-php-ext-install gd
+
+# Copiar los archivos del proyecto Laravel
+COPY ./laravel /var/www/
+
+# Establecer los permisos de los archivos
+RUN chown -R www-data:www-data /var/www
+RUN chmod -R 755 /var/www
+
+# Instalar Composer
+RUN curl -sS https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/local/bin/composer
+
+# Instalar dependencias de Laravel con Composer
+RUN composer install
+
+# Exponer el puerto
+EXPOSE 5020
+
+# Comando para ejecutar Laravel
+CMD ["php-fpm"]
