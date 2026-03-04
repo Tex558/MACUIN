@@ -1,5 +1,4 @@
 services:
-  # Servicio de MySQL
   mysql:
     image: mysql:8.0
     container_name: bdmacuin
@@ -13,49 +12,44 @@ services:
     networks:
       - macuin_network
     ports:
-      - "3307:3306"   # Exponiendo el puerto 3307 de tu máquina local al 3306 del contenedor
+      - "3307:3306"
 
-  # Servicio para Flask
   flask:
     build:
-      context: ./flask
+      context: ./flask  # Apunta a la carpeta flask
     container_name: flask-macuin
     ports:
-      - "5010:5000"  # Exponiendo Flask en el puerto 5000
+      - "5010:5000"
     depends_on:
       - mysql
     networks:
       - macuin_network
 
-  # Servicio para la API
   api:
     build:
-      context: ./api
+      context: ./api  # Apunta a la carpeta api
     container_name: api-macuin
     ports:
-      - "5000:5000"  # Exponiendo la API en el puerto 8000
+      - "5000:5000"
     depends_on:
       - mysql
     networks:
       - macuin_network
 
-  # Servicio para Laravel
   laravel:
     build:
-      context: ./laravel
+      context: ./laravel  # Apunta a la carpeta laravel
     container_name: laravel-macuin
     ports:
-      - "5020:5000"  # Exponiendo Laravel en el puerto 8001
+      - "5020:5000"
     depends_on:
       - mysql
     networks:
       - macuin_network
 
-# Definir las redes que usarán los contenedores
 networks:
   macuin_network:
     driver: bridge
 
-# Volúmenes para persistencia de datos de MySQL
 volumes:
   mysql:

@@ -1,20 +1,13 @@
-# Usa una imagen base oficial de Python
 FROM python:3.12-slim
 
-# Establece el directorio de trabajo dentro del contenedor
-WORKDIR /api
+WORKDIR /app
 
-# Copia el archivo de requerimientos
-COPY ./api/requirements.txt /api/
+COPY requirements.txt .
 
-# Instala las dependencias
-RUN pip install --no-cache-dir -r /api/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copia los archivos desde la carpeta 'api' en tu máquina local al contenedor
-COPY ./api /api/
+COPY ./app ./app
 
-# Expone el puerto para la API
 EXPOSE 5000
 
-# Comando para ejecutar la API (asegúrate de que el archivo principal sea 'main.py')
-CMD ["python", "/api/main.py"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "5000", "--reload"]

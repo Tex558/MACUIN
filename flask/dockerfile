@@ -1,16 +1,11 @@
-# Dockerfile para Flask
 FROM python:3.12-slim
 
 WORKDIR /app
 
-# Copiar los archivos de 'flask' al contenedor
-COPY ./flask /app
+COPY . .
 
-# Instalar dependencias
-RUN pip install --no-cache-dir -r /app/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Exponer el puerto de la aplicación Flask
 EXPOSE 5000
 
-# Ejecutar la aplicación Flask
 CMD ["python", "app.py"]
