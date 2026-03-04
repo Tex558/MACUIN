@@ -16,7 +16,7 @@ services:
 
   flask:
     build:
-      context: ./flask  # Apunta a la carpeta flask
+      context: ./flask
     container_name: flask-macuin
     ports:
       - "5010:5000"
@@ -27,7 +27,7 @@ services:
 
   api:
     build:
-      context: ./api  # Apunta a la carpeta api
+      context: ./api
     container_name: api-macuin
     ports:
       - "5000:5000"
@@ -38,7 +38,7 @@ services:
 
   laravel:
     build:
-      context: ./laravel  # Apunta a la carpeta laravel
+      context: ./laravel
     container_name: laravel-macuin
     ports:
       - "5020:5000"
