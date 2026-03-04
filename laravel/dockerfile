@@ -2,7 +2,7 @@ FROM php:8.1-fpm
 
 WORKDIR /var/www
 
-# Instalamos dependencias y la extensión pdo_mysql necesaria para conectar a la BD
+# Dependencias y la extensión pdo_mysql necesaria para conectar a la BD
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip
 
-# Instalamos extensiones de PHP incluyendo pdo_mysql
+# Extensiones de PHP incluyendo pdo_mysql
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg
 RUN docker-php-ext-install gd pdo_mysql
 
@@ -23,7 +23,6 @@ RUN chmod -R 755 /var/www
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
-# Instalamos ignorando las alertas de seguridad
 RUN composer install --no-security-blocking --no-interaction --no-scripts
 
 EXPOSE 5020
