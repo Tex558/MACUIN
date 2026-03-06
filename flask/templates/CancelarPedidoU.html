@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cancelación de Pedido - MACUIN</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Orbitron:wght@700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#EF233C",
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#121212",
+                        "card-dark": "#1A1D21",
+                        "macuin-blue": "#3B82F6",
+                    },
+                    fontFamily: {
+                        display: ["Orbitron", "sans-serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        .tech-font {
+            font-family: 'Orbitron', sans-serif;
+            font-style: italic;
+        }
+
+        .custom-radio:checked {
+            background-color: #3B82F6;
+            border-color: #3B82F6;
+        }
+
+        .main-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .modal-box {
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white">
+    <header class="w-full border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark">
+        <div class="max-w-[1280px] mx-auto px-12 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span
+                    class="tech-font text-2xl font-black tracking-tighter text-slate-900 dark:text-white">MACUIN</span>
+4            </div>
+            <nav class="flex items-center gap-12">
+                <a class="text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 hover:text-primary transition-colors"
+                    href="#">Inicio</a>
+                <a class="text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 hover:text-primary transition-colors"
+                    href="#">Catálogo</a>
+                <a class="text-sm font-semibold uppercase tracking-widest text-primary border-b-2 border-primary pb-1"
+                    href="#">Pedidos</a>
+                <a class="text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 hover:text-primary transition-colors"
+                    href="#">Perfil</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex flex-col items-center pt-16 px-4 pb-16">
+        <div class="main-container w-full">
+            <div class="mb-10">
+                <button
+                    class="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-white mb-6 transition-colors">
+                    <span class="material-symbols-outlined text-xl">arrow_back</span>
+                    <span class="text-xs uppercase font-bold tracking-widest">Regresar</span>
+                </button>
+                <h1 class="tech-font text-5xl font-black tracking-tight mb-2">CANCELAR PEDIDO</h1>
+                <p class="text-gray-500 dark:text-gray-400 font-mono tracking-widest text-lg">ID: MQ-99201-ORD</p>
+            </div>
+
+            <div class="mb-8">
+                <h2 class="text-xs font-bold tracking-[0.2em] text-gray-500 dark:text-gray-400 uppercase mb-4">
+                    Seleccione el motivo de cancelación</h2>
+                <div
+                    class="bg-white dark:bg-card-dark rounded-lg border border-gray-200 dark:border-gray-800 divide-y divide-gray-100 dark:divide-gray-800 overflow-hidden">
+                    <label
+                        class="flex items-center justify-between px-6 py-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                        <span class="font-medium text-lg">Pedido por error</span>
+                        <input checked=""
+                            class="w-6 h-6 text-macuin-blue bg-transparent border-gray-300 dark:border-gray-600 focus:ring-offset-0 focus:ring-0"
+                            name="reason" type="radio" />
+                    </label>
+                    <label
+                        class="flex items-center justify-between px-6 py-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                        <span class="font-medium text-lg text-gray-700 dark:text-gray-200">Demora en la entrega</span>
+                        <input
+                            class="w-6 h-6 text-macuin-blue bg-transparent border-gray-300 dark:border-gray-600 focus:ring-offset-0 focus:ring-0"
+                            name="reason" type="radio" />
+                    </label>
+                    <label
+                        class="flex items-center justify-between px-6 py-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                        <span class="font-medium text-lg text-gray-700 dark:text-gray-200">Cambio de opinión</span>
+                        <input
+                            class="w-6 h-6 text-macuin-blue bg-transparent border-gray-300 dark:border-gray-600 focus:ring-offset-0 focus:ring-0"
+                            name="reason" type="radio" />
+                    </label>
+                    <label
+                        class="flex items-center justify-between px-6 py-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                        <span class="font-medium text-lg text-gray-700 dark:text-gray-200">Ya no lo necesito</span>
+                        <input
+                            class="w-6 h-6 text-macuin-blue bg-transparent border-gray-300 dark:border-gray-600 focus:ring-offset-0 focus:ring-0"
+                            name="reason" type="radio" />
+                    </label>
+                    <label
+                        class="flex items-center justify-between px-6 py-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                        <span class="font-medium text-lg text-gray-700 dark:text-gray-200">Otro motivo</span>
+                        <input
+                            class="w-6 h-6 text-macuin-blue bg-transparent border-gray-300 dark:border-gray-600 focus:ring-offset-0 focus:ring-0"
+                            name="reason" type="radio" />
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h2 class="text-xs font-bold tracking-[0.2em] text-gray-500 dark:text-gray-400 uppercase mb-4">
+                    Comentarios Adicionales</h2>
+                <textarea
+                    class="w-full bg-white dark:bg-card-dark border-2 border-macuin-blue/30 dark:border-macuin-blue/40 rounded-lg p-6 text-lg focus:border-macuin-blue focus:ring-0 transition-all placeholder:text-gray-400 dark:placeholder:text-gray-600"
+                    placeholder="Escriba aquí los detalles adicionales..." rows="6"></textarea>
+            </div>
+
+            <div class="text-center">
+                <button onclick="abrirModalCancelado()"
+                    class="w-full bg-primary hover:bg-red-600 text-white py-6 rounded-lg transition-all active:scale-[0.98] shadow-lg shadow-primary/20 mb-4 group">
+                    <span class="tech-font text-3xl font-black tracking-wider uppercase">Confirmar Cancelación</span>
+                </button>
+                <p class="text-xs font-bold tracking-[0.3em] text-gray-500 dark:text-gray-500 uppercase">
+                    ESTA ACCIÓN NO SE PUEDE DESHACER
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL PEDIDO CANCELADO -->
+    <div id="modalCancelado" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 px-4">
+        <div class="modal-box w-full max-w-md bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-800 rounded p-8 text-center">
+            <div class="w-16 h-16 mx-auto mb-6 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary text-3xl">check</span>
+            </div>
+
+            <h2 class="font-display text-2xl font-black italic uppercase tracking-tight text-slate-900 dark:text-white mb-4">
+                Pedido Cancelado
+            </h2>
+
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                La cancelación del pedido se realizó correctamente.
+            </p>
+
+            <button onclick="cerrarModalCancelado()"
+                class="w-full bg-primary hover:bg-red-600 text-white py-3 rounded transition">
+                <span class="font-display text-sm font-bold uppercase tracking-wider">Aceptar</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function abrirModalCancelado() {
+            const modal = document.getElementById('modalCancelado');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function cerrarModalCancelado() {
+            const modal = document.getElementById('modalCancelado');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    </script>
+
+</body>
+
+</html>

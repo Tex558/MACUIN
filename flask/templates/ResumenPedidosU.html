@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de Pedido - MACUIN</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#E31B23",
+                        accent: "#4BC9FF",
+                        "background-dark": "#121212",
+                        "card-dark": "#1E1E1E",
+                        "input-dark": "#2C2C2C",
+                        "border-dark": "#333333"
+                    },
+                    fontFamily: {
+                        display: ["'Orbitron'", "sans-serif"],
+                        body: ["'Rajdhani'", "sans-serif"]
+                    },
+                    borderRadius: { DEFAULT: "0.25rem" },
+                    keyframes: {
+                        shimmer: { "100%": { transform: "translateX(100%)" } }
+                    },
+                    animation: {
+                        shimmer: "shimmer 1.5s infinite"
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        ::-webkit-scrollbar{width:8px}
+        ::-webkit-scrollbar-track{background:#121212}
+        ::-webkit-scrollbar-thumb{background:#333;border-radius:4px}
+        ::-webkit-scrollbar-thumb:hover{background:#4BC9FF}
+        .text-glow{text-shadow:0 0 10px rgba(75,201,255,.4)}
+        .btn-glow:hover{box-shadow:0 0 15px rgba(227,27,35,.6)}
+        .nav-link{position:relative}
+        .nav-link::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:#E31B23;transition:.3s}
+        .nav-link:hover::after{width:100%}
+
+        .popup-box{
+            background:
+                radial-gradient(circle at top center, rgba(75,201,255,.12), transparent 35%),
+                linear-gradient(180deg, #10151d 0%, #0f141b 100%);
+            box-shadow:
+                0 0 0 1px rgba(120,150,200,.08) inset,
+                0 18px 45px rgba(0,0,0,.45);
+        }
+
+        .popup-icon{
+            box-shadow:
+                0 0 35px rgba(48,185,255,.25),
+                0 0 70px rgba(48,185,255,.12);
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark font-body text-gray-300 min-h-screen flex flex-col antialiased selection:bg-accent selection:text-black">
+    <header class="sticky top-0 z-50 bg-[#1E1E1E] border-b border-border-dark shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <div class="flex items-center gap-3 cursor-pointer group">
+                        <div class="h-10 w-10 bg-primary skew-x-[-12deg] flex items-center justify-center rounded-sm shadow-[0_0_10px_rgba(227,27,35,0.5)] group-hover:shadow-[0_0_15px_rgba(227,27,35,0.8)] transition-all">
+                            <span class="material-symbols-outlined text-white skew-x-[12deg] !text-2xl">local_shipping</span>
+                        </div>
+                        <span class="font-display font-black text-2xl italic tracking-wider text-white ml-2">MACUIN</span>
+                    </div>
+
+                    <div class="hidden md:flex md:ml-12 md:space-x-8 items-center h-full">
+                        <a href="#" class="nav-link font-display text-sm font-bold uppercase tracking-wider text-gray-400 hover:text-white transition-colors py-2">Inicio</a>
+                        <a href="#" class="nav-link font-display text-sm font-bold uppercase tracking-wider text-gray-400 hover:text-white transition-colors py-2">Catálogo</a>
+                        <a href="#" class="font-display text-sm font-bold uppercase tracking-wider text-white border-b-2 border-primary pb-1">Pedidos</a>
+                        <a href="#" class="nav-link font-display text-sm font-bold uppercase tracking-wider text-gray-400 hover:text-white transition-colors py-2">Perfil</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-6">
+                    <div class="relative group cursor-pointer">
+                        <span class="material-symbols-outlined text-gray-400 group-hover:text-white transition-colors">notifications</span>
+                        <span class="absolute -top-1 -right-1 h-2 w-2 bg-primary rounded-full animate-pulse"></span>
+                    </div>
+                    <div class="h-8 w-8 rounded bg-input-dark border border-border-dark flex items-center justify-center hover:border-gray-500 cursor-pointer transition-colors">
+                        <span class="material-symbols-outlined text-gray-400 text-sm">person</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <div class="mb-10 flex items-center gap-6 border-b border-border-dark pb-6">
+            <button class="h-10 w-10 flex items-center justify-center rounded bg-card-dark border border-border-dark hover:border-accent hover:text-accent text-gray-400 transition-all duration-200 group">
+                <span class="material-symbols-outlined text-xl group-hover:-translate-x-0.5 transition-transform">arrow_back_ios_new</span>
+            </button>
+            <div>
+                <h1 class="font-display text-3xl md:text-4xl font-black italic uppercase tracking-widest text-white drop-shadow-md">Resumen de Pedido</h1>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="h-1 w-8 bg-primary skew-x-[-12deg]"></span>
+                    <p class="text-accent text-sm font-bold tracking-[0.2em] uppercase">Checkout Process</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+            <div class="lg:col-span-8 space-y-10">
+
+                <section>
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="font-display text-lg font-bold uppercase tracking-wider text-gray-400 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm">inventory_2</span>
+                            Productos (1)
+                        </h2>
+                        <button class="text-xs font-bold uppercase text-accent hover:text-white hover:underline transition-colors tracking-wider">Editar Carrito</button>
+                    </div>
+
+                    <div class="bg-card-dark rounded-sm border border-border-dark hover:border-gray-600 transition-colors duration-300">
+                        <div class="p-6 flex flex-col sm:flex-row gap-6">
+                            <div class="w-full sm:w-40 h-40 flex-shrink-0 bg-black rounded overflow-hidden border border-border-dark relative group">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnqdEAoFlWfPI-axk6-623WuVVG--2nNzj9wAg642Uw7aP_7ybsL8bgKrHDioDzS2LVHNK44OiDcxpsafmY2dicLPBdRSihBRNvaYHFMC501KLTku1osT8DhTg88_HxECJRP-8_cHLrWHRoiskxt4PBpe9cGq9-SeHUYJ-E-VtrtL7ZRaJyyDQEmAsAXUf7C9uU2WtdzxuEheyZA7HET8dfPkuPUCDR70f_yoiy5ERAUFwWALbD5U0Louv7mITEPCc1IW74v8iySpV" alt="Kit Discos Cerámicos" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+                                <div class="absolute bottom-2 left-2 z-20">
+                                    <span class="px-2 py-0.5 bg-primary text-white text-[10px] font-black italic uppercase tracking-wider skew-x-[-12deg] inline-block">High Perf</span>
+                                </div>
+                            </div>
+
+                            <div class="flex-grow flex flex-col justify-between">
+                                <div>
+                                    <div class="flex justify-between items-start">
+                                        <h3 class="font-display text-xl md:text-2xl font-black italic uppercase tracking-wide text-white mb-2 leading-none">Kit Discos Cerámicos</h3>
+                                        <button class="text-gray-600 hover:text-primary transition-colors">
+                                            <span class="material-symbols-outlined">delete</span>
+                                        </button>
+                                    </div>
+                                    <p class="text-xs font-mono text-gray-500 uppercase tracking-widest flex items-center gap-2 mb-4">
+                                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                        ID: MQ-29402-BRK
+                                    </p>
+                                    <p class="text-sm text-gray-400 leading-relaxed font-light line-clamp-2">
+                                        Sistema de frenado de alto rendimiento compuesto de carbono-cerámica para máxima resistencia térmica.
+                                    </p>
+                                </div>
+
+                                <div class="flex justify-between items-end mt-6 pt-4 border-t border-dashed border-gray-800">
+                                    <div class="flex items-center gap-3">
+                                        <label class="text-xs font-bold text-gray-500 uppercase">Cant:</label>
+                                        <div class="flex items-center bg-input-dark border border-border-dark rounded-sm">
+                                            <button class="px-2 py-1 text-gray-400 hover:text-white hover:bg-gray-700 transition-colors">-</button>
+                                            <span class="px-2 py-1 text-white font-mono font-bold text-sm min-w-[2rem] text-center">1</span>
+                                            <button class="px-2 py-1 text-gray-400 hover:text-white hover:bg-gray-700 transition-colors">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="block text-xs text-gray-600 uppercase mb-1">Precio Unitario</span>
+                                        <span class="font-display text-2xl font-bold italic text-accent text-glow">$4,250.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="font-display text-lg font-bold uppercase tracking-wider text-gray-400 mb-6 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-sm">local_shipping</span>
+                        Detalles de Entrega
+                    </h2>
+
+                    <div class="bg-card-dark p-6 rounded-sm border border-border-dark space-y-8">
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <label class="block text-xs font-bold text-accent uppercase tracking-widest">Dirección de envío</label>
+                                <span class="text-[10px] px-2 py-0.5 bg-green-900/30 text-green-400 border border-green-900 rounded uppercase font-bold tracking-wider">Principal</span>
+                            </div>
+
+                            <div class="group relative bg-input-dark border border-border-dark p-4 rounded-sm hover:border-accent/60 transition-all cursor-pointer">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                <div class="flex items-start gap-4">
+                                    <div class="mt-1">
+                                        <span class="material-symbols-outlined text-gray-500 group-hover:text-accent transition-colors">location_on</span>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <p class="text-white font-bold font-display uppercase tracking-wide text-sm mb-1">Taller Principal Norte</p>
+                                        <p class="text-gray-400 text-sm font-mono leading-relaxed">
+                                            Av. Corregidora Norte 112, Zona Industrial Benito Juárez<br>
+                                            Querétaro, Qro. CP 76000
+                                        </p>
+                                    </div>
+                                    <span class="material-symbols-outlined text-gray-600 group-hover:text-white transition-colors">edit</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative flex items-center py-2">
+                            <div class="flex-grow border-t border-border-dark"></div>
+                            <div class="flex-shrink-0 mx-4">
+                                <span class="text-gray-600 font-black text-xs uppercase tracking-widest bg-card-dark px-2">O recoger en</span>
+                            </div>
+                            <div class="flex-grow border-t border-border-dark"></div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Seleccionar almacén</label>
+                            <div class="relative">
+                                <select class="appearance-none w-full bg-input-dark text-white rounded-sm p-4 pr-10 border border-border-dark hover:border-gray-500 focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-all font-mono text-sm cursor-pointer">
+                                    <option>Almacén Central Bajío - Disponibilidad Inmediata</option>
+                                    <option>Sucursal CDMX Norte - 2 Días</option>
+                                    <option>Sucursal Monterrey - 3 Días</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-accent">
+                                    <span class="material-symbols-outlined">expand_more</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="lg:col-span-4">
+                <div class="sticky top-28">
+                    <div class="bg-card-dark rounded-sm shadow-2xl border border-border-dark overflow-hidden flex flex-col relative">
+                        <div class="h-1 bg-gradient-to-r from-primary via-red-600 to-transparent w-full"></div>
+                        <div class="p-6 md:p-8">
+                            <h2 class="font-display text-lg font-bold uppercase tracking-wider text-white mb-8 border-b border-gray-800 pb-4">Resumen de Pago</h2>
+
+                            <div class="space-y-4 mb-8 font-mono text-sm">
+                                <div class="flex justify-between items-center text-gray-400">
+                                    <span>Subtotal</span>
+                                    <span class="text-white font-bold tracking-wider">$4,250.00</span>
+                                </div>
+                                <div class="flex justify-between items-center text-gray-400">
+                                    <span>Envío Estimado</span>
+                                    <span class="text-white font-bold tracking-wider">$680.00</span>
+                                </div>
+                                <div class="flex justify-between items-center text-accent/80 text-xs mt-2">
+                                    <span>Impuestos (16%)</span>
+                                    <span>Incluidos</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-black/40 -mx-8 px-8 py-6 mb-8 border-y border-border-dark">
+                                <div class="flex justify-between items-end">
+                                    <span class="font-display text-xl font-bold italic uppercase text-gray-400 mb-1">Total</span>
+                                    <div class="text-right">
+                                        <span class="block font-display text-4xl font-black italic text-accent text-glow leading-none tracking-tighter">$4,930.00</span>
+                                        <span class="text-[10px] text-gray-500 uppercase tracking-widest mt-1 block">MXN Moneda Nacional</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button onclick="abrirPopup()" class="w-full bg-primary hover:bg-[#c41219] text-white font-display font-black italic text-xl uppercase py-5 rounded-sm shadow-lg btn-glow transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center justify-center gap-3 group relative overflow-hidden">
+                                <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
+                                <span class="material-symbols-outlined text-white group-hover:text-yellow-300 transition-colors">bolt</span>
+                                <span class="z-10 tracking-wider">Realizar Pedido</span>
+                            </button>
+
+                            <div class="mt-8 grid grid-cols-3 gap-3 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+                                <div class="h-8 bg-[#2C2C2C] rounded flex items-center justify-center border border-gray-700"><span class="text-[10px] font-bold text-gray-400">VISA</span></div>
+                                <div class="h-8 bg-[#2C2C2C] rounded flex items-center justify-center border border-gray-700"><span class="text-[10px] font-bold text-gray-400">MC</span></div>
+                                <div class="h-8 bg-[#2C2C2C] rounded flex items-center justify-center border border-gray-700"><span class="text-[10px] font-bold text-gray-400">AMEX</span></div>
+                            </div>
+
+                            <div class="mt-6 flex items-center justify-center gap-2 text-gray-600">
+                                <span class="material-symbols-outlined text-xs">lock</span>
+                                <span class="text-[10px] uppercase font-bold tracking-widest">Pago 100% Seguro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- POPUP -->
+    <div id="popupPedido" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center px-4">
+        <div class="popup-box w-full max-w-[680px] min-h-[620px] border border-[#3c4a63] rounded-[22px] flex flex-col items-center justify-start px-12 py-12 text-center">
+            <div class="popup-icon w-[118px] h-[118px] rounded-full border-[3px] border-[#4ab7ff59] bg-[#101924cc] flex items-center justify-center mb-8">
+                <span class="material-symbols-outlined text-[64px] text-accent">check</span>
+            </div>
+
+            <h2 class="font-display text-white text-[40px] font-black italic uppercase tracking-wide mb-6">
+                Pedido Completado
+            </h2>
+
+            <p class="text-[28px] text-gray-300 mb-6">
+                Su pedido ha sido procesado exitosamente.
+            </p>
+
+            <p class="font-display text-[20px] tracking-[2px] text-[#626a80] mb-12">
+                ID: MQ-74210-ORD
+            </p>
+
+            <button class="w-full max-w-[575px] h-[92px] rounded-[14px] bg-[#f3121f] hover:bg-[#dc0f1b] text-white font-display text-[28px] font-extrabold italic uppercase tracking-wide shadow-[0_14px_28px_rgba(0,0,0,0.22)] transition mb-8">
+                Ver Estatus
+            </button>
+
+            <button onclick="cerrarPopup()" class="bg-transparent text-[#687189] hover:text-[#9aa4bf] font-display text-[16px] font-bold uppercase tracking-[3px] transition">
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function abrirPopup() {
+            const popup = document.getElementById('popupPedido');
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+        }
+
+        function cerrarPopup() {
+            const popup = document.getElementById('popupPedido');
+            popup.classList.add('hidden');
+            popup.classList.remove('flex');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Registro de Compradores MACUIN Web Minimalista</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#E62429", 
+                        "background-dark": "#121212",
+                        "card-dark": "#1E1E1E", 
+                        "input-dark": "#2C2C2C", 
+                        "text-muted": "#9CA3AF", 
+                        "link-blue": "#3B82F6",
+                    },
+                    fontFamily: {
+                        display: ["Orbitron", "sans-serif"],
+                        body: ["Inter", "sans-serif"], 
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .font-tech {
+            font-family: 'Orbitron', sans-serif;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-dark font-body min-h-screen flex flex-col 
+    justify-center relative overflow-hidden text-white transition-colors duration-300">
+    <main class="relative z-10 w-full max-w-lg mx-auto p-6 md:p-8 flex flex-col items-center">
+        <div class="text-center mb-10">
+            <h1 class="font-tech text-5xl md:text-6xl font-black italic tracking-wider text-white mb-2">MACUIN</h1>
+        </div>
+        <div class="w-full bg-card-dark border border-gray-800 rounded-xl p-6 md:p-10 shadow-2xl">
+            <div class="mb-8">
+                <h2 class="font-tech text-3xl font-bold italic text-white mb-3 tracking-wide">CREAR CUENTA</h2>
+                <p class="text-gray-400 text-sm">Complete el formulario para crear su cuenta.</p>
+            </div>
+            <form class="space-y-6">
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold text-gray-400 tracking-wider uppercase" for="name">Nombre
+                        Completo</label>
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-y-0 left-0 pl-4 flex items-center 
+                            pointer-events-none text-gray-500 group-focus-within:text-white transition-colors">
+                            <span class="material-icons text-xl">person</span>
+                        </div>
+                        <input
+                            class="block w-full pl-12 pr-4 py-3.5 bg-input-dark 
+                            border-transparent focus:border-primary focus:ring-1 
+                            focus:ring-primary rounded-lg text-gray-200 placeholder-gray-500 text-sm 
+                            transition-all duration-200"
+                            id="name" placeholder="Ej. Juan Pérez" required="" type="text" />
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold text-gray-400 tracking-wider uppercase" for="email">Correo
+                        Electrónico</label>
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-y-0 left-0 pl-4 flex items-center 
+                            pointer-events-none text-gray-500 group-focus-within:text-white transition-colors">
+                            <span class="material-icons text-xl">mail</span>
+                        </div>
+                        <input
+                            class="block w-full pl-12 pr-4 py-3.5 bg-input-dark 
+                            border-transparent focus:border-primary focus:ring-1 
+                            focus:ring-primary rounded-lg text-gray-200 placeholder-gray-500 
+                            text-sm transition-all duration-200"
+                            id="email" placeholder="usuario@logistica.com" required="" type="email" />
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold text-gray-400 tracking-wider uppercase"
+                        for="phone">Teléfono</label>
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-y-0 left-0 pl-4 flex items-center 
+                            pointer-events-none text-gray-500 group-focus-within:text-white transition-colors">
+                            <span class="material-icons text-xl">smartphone</span>
+                        </div>
+                        <input
+                            class="block w-full pl-12 pr-4 py-3.5 bg-input-dark 
+                            border-transparent focus:border-primary focus:ring-1 
+                            focus:ring-primary rounded-lg text-gray-200 placeholder-gray-500 text-sm 
+                            transition-all duration-200"
+                            id="phone" placeholder="+52 000 000 0000" type="tel" />
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold text-gray-400 tracking-wider uppercase"
+                        for="password">Contraseña</label>
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-y-0 left-0 pl-4 flex items-center 
+                            pointer-events-none text-gray-500 group-focus-within:text-white transition-colors">
+                            <span class="material-icons text-xl">lock</span>
+                        </div>
+                        <input
+                            class="block w-full pl-12 pr-12 py-3.5 bg-input-dark 
+                            border-transparent focus:border-primary focus:ring-1 
+                            focus:ring-primary rounded-lg text-gray-200 placeholder-gray-500 
+                            text-sm transition-all duration-200"
+                            id="password" placeholder="••••••••" required="" type="password" />
+                        <button
+                            class="absolute inset-y-0 right-0 pr-4 flex items-center 
+                            text-gray-500 hover:text-white transition-colors focus:outline-none"
+                            type="button">
+                            <span class="material-icons text-xl">visibility</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex items-center pt-2">
+                    <div class="flex items-center h-5">
+                        <input
+                            class="w-5 h-5 border border-gray-600 rounded 
+                            bg-input-dark text-primary focus:ring-primary focus:ring-offset-gray-800 cursor-pointer"
+                            id="terms" type="checkbox" />
+                    </div>
+                    <div class="ml-3 text-sm">
+                        <label class="font-light text-gray-400 select-none cursor-pointer" for="terms">Acepto términos y
+                            condiciones</label>
+                    </div>
+                </div>
+                <div class="pt-4">
+                    <button
+                        class="w-full flex justify-center py-4 px-4 border 
+                        border-transparent rounded-lg shadow-sm text-lg font-tech 
+                        font-bold italic text-white bg-primary hover:bg-red-700 
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 
+                        focus:ring-red-500 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+                        type="submit">
+                        FINALIZAR REGISTRO
+                    </button>
+                </div>
+            </form>
+            <div class="mt-8 text-center">
+                <p class="text-sm text-gray-400">
+                    ¿Ya tienes cuenta?
+                    <a class="font-medium text-link-blue 
+                    hover:text-blue-400 transition-colors ml-1" href="#">Inicia
+                        sesión</a>
+                </p>
+            </div>
+        </div>
+        <footer class="mt-12 text-center space-y-3">
+            <p class="text-xs text-gray-500 font-medium tracking-wide">© 2024 MACUIN ERP</p>
+            <div class="flex justify-center space-x-6 text-xs text-gray-500 font-bold tracking-widest uppercase">
+                <a class="hover:text-gray-300 transition-colors" href="#">Términos</a>
+                <span class="text-gray-700">•</span>
+                <a class="hover:text-gray-300 transition-colors" href="#">Privacidad</a>
+            </div>
+        </footer>
+    </main>
+
+</body>
+
+</html>

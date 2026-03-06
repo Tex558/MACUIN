@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Detalle de Stock - MACUIN</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#4BC9FF", // Vivid Blue
+                        secondary: "#E31B23", // Vivid Red
+                        "background-dark": "#121212", // Matte Charcoal Gray - Uniform background
+                        "surface-dark": "#1E1E1E", // Slightly lighter for cards/sections
+                        "border-dark": "#333333", // Dark gray dividers
+                        "text-main": "#FFFFFF",
+                        "text-muted": "#9CA3AF",
+                    },
+                    fontFamily: {
+                        display: ["Teko", "sans-serif"],
+                        body: ["Roboto", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #FFFFFF;
+        }
+
+        .technical-border {
+            border: 1px solid #333333;
+        }
+    </style>
+</head>
+
+<body
+    class="font-body min-h-screen flex flex-col bg-background-dark text-text-main antialiased selection:bg-primary selection:text-black">
+    <nav class="bg-surface-dark border-b border-border-dark sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-2">
+                    <div
+                        class="bg-primary h-8 w-8 flex items-center justify-center text-black font-bold font-display text-xl tracking-wider">
+                        M</div>
+                    <span
+                        class="font-display font-bold text-3xl tracking-wide text-white uppercase italic">MACUIN</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a class="text-text-muted hover:text-white px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors"
+                        href="#">Inicio</a>
+                    <a class="text-primary px-3 py-2 text-sm font-bold uppercase tracking-wider border-b-2 border-primary"
+                        href="#">Catálogo</a>
+                    <a class="text-text-muted hover:text-white px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors"
+                        href="#">Pedidos</a>
+                    <a class="text-text-muted hover:text-white px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors"
+                        href="#">Perfil</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="h-8 w-8 bg-gray-600 overflow-hidden">
+                        <img alt="Profile" class="h-full w-full object-cover grayscale"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWGfmip0VuKq94q_GVZAPxipMUYuMUcyuldnV5-dAYAE1DpIW78jLAOCmepcfMSAqkMcn1VFGSuzYT9XzTAIp4tEJjGYJ4JI4B7QWKVL_cBAkdJKu9NkgbzFwYg2csKyV-bX1PFYySd_r_KM5AruW2UIylTyMsOAGtVjx7IZpn7q-gl6-DeZ8M4DkxKn4hgG48JOX1kASWB5oZWZ1hXJ8_8TSQ7WqvXUeuUx8hyTOMObaSRx0_Hj1-CaW7fcSDpMEZy_RfgV79bN36" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        <div class="flex items-center mb-8 border-b border-border-dark pb-6">
+            <button
+                class="flex items-center justify-center w-10 h-10 border border-border-dark hover:bg-surface-dark transition-colors mr-4 group">
+                <span class="material-icons text-text-muted group-hover:text-white">arrow_back_ios_new</span>
+            </button>
+            <div>
+                <h1 class="font-display font-bold text-4xl italic tracking-wide text-white uppercase leading-none">
+                    Kit Discos Cerámicos
+                </h1>
+            </div>
+            <div class="ml-auto">
+                <span class="font-display text-4xl text-primary font-bold italic">$ 12,450.00</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-7 flex flex-col gap-6">
+                <div
+                    class="bg-surface-dark p-8 border border-border-dark flex items-center justify-center h-[500px] relative">
+                    <img alt="Disco de freno cerámico de alto rendimiento"
+                        class="relative z-10 max-h-full max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-500"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj6izP8qYmhUzndBCIgL1VHzB6OQd-O2e8OkAXa16pFjc8-j4J3UbKd7b7GoQTbGJUqvB9ihP1AmCddISkOOGpxfOcbpH2UFKWTed9CUxh863r4ME-FTMTc9tlxLKuYVCWiCuvfCypkNT9FhCOJM1lvt4mQbuZDcrqcbFOIqDoOL5k4K2IrSuPkxkiawU1ceZ_N_vf9QRjMpJdmYnSamFKpB59I0WCGAVCLTAvy53rG011TKGvrOaftb_XUqGD_fRKDC2m_N21So-B" />
+                    <div
+                        class="absolute top-4 left-4 bg-black text-white px-3 py-1 text-xs font-bold uppercase tracking-wider border border-border-dark">
+                        Serie Profesional
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-border-dark border border-border-dark">
+                    <div class="bg-surface-dark p-6">
+                        <h3 class="text-xs font-bold text-text-muted uppercase tracking-widest mb-2">Material</h3>
+                        <p class="font-display text-xl text-white">Compuesto Cerámico-Carbono</p>
+                    </div>
+                    <div class="bg-surface-dark p-6">
+                        <h3 class="text-xs font-bold text-text-muted uppercase tracking-widest mb-2">Compatibilidad</h3>
+                        <p class="font-display text-xl text-white">Eje Delantero / SUV Heavy Duty</p>
+                    </div>
+                    <div class="bg-surface-dark p-6">
+                        <h3 class="text-xs font-bold text-text-muted uppercase tracking-widest mb-2">Peso</h3>
+                        <p class="font-display text-xl text-white">8.4 Kg / Unidad</p>
+                    </div>
+                    <div class="bg-surface-dark p-6">
+                        <h3 class="text-xs font-bold text-text-muted uppercase tracking-widest mb-2">Garantía</h3>
+                        <p class="font-display text-xl text-white">3 Años / 60,000 KM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-5 flex flex-col space-y-6">
+                <div class="bg-primary p-6 text-center text-black shadow-none border border-primary">
+                    <h2 class="text-black/70 text-sm font-bold tracking-widest uppercase mb-1">Estado de Inventario</h2>
+                    <div
+                        class="font-display italic font-bold text-5xl md:text-6xl tracking-wide uppercase leading-tight">
+                        En Stock: <br /><span>14 Unidades</span>
+                    </div>
+                </div>
+                <div class="bg-surface-dark border border-border-dark">
+                    <div class="p-4 border-b border-border-dark bg-background-dark/50">
+                        <h3 class="text-sm font-bold text-text-muted uppercase tracking-widest">Distribución por Almacén
+                        </h3>
+                    </div>
+                    <div class="w-full">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-border-dark">
+                                    <th class="py-3 px-5 text-xs font-bold text-text-muted uppercase tracking-wider">
+                                        Ubicación</th>
+                                    <th
+                                        class="py-3 px-5 text-xs font-bold text-text-muted uppercase tracking-wider text-right">
+                                        Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-border-dark">
+                                <tr>
+                                    <td class="py-4 px-5">
+                                        <p class="font-bold text-white text-lg font-display tracking-wide">Almacén
+                                            Central</p>
+                                        <p class="text-xs text-text-muted uppercase">Zona Industrial 1</p>
+                                    </td>
+                                    <td class="py-4 px-5 text-right">
+                                        <span class="font-display text-2xl font-bold text-white">8</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 px-5">
+                                        <p class="font-bold text-white text-lg font-display tracking-wide">Sucursal
+                                            Norte</p>
+                                        <p class="text-xs text-text-muted uppercase">Vallejo Hub</p>
+                                    </td>
+                                    <td class="py-4 px-5 text-right">
+                                        <span class="font-display text-2xl font-bold text-white">4</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 px-5">
+                                        <p class="font-bold text-white text-lg font-display tracking-wide">Sucursal
+                                            Poniente</p>
+                                        <p class="text-xs text-text-muted uppercase">Santa Fe Logistic</p>
+                                    </td>
+                                    <td class="py-4 px-5 text-right">
+                                        <span class="font-display text-2xl font-bold text-white">2</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="bg-surface-dark p-5 border border-border-dark flex items-center space-x-5">
+                    <div class="border border-text-muted/30 p-2 flex-shrink-0">
+                        <span class="material-icons text-white text-2xl">schedule</span>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-text-muted uppercase tracking-widest mb-1">Tiempo Estimado de
+                            Entrega</h4>
+                        <p class="font-display font-bold text-3xl text-white uppercase italic tracking-wide">24 - 48
+                            Horas</p>
+                    </div>
+                </div>
+                <button
+                    class="w-full bg-secondary hover:bg-red-700 text-white font-display italic font-bold text-3xl py-5 px-6 uppercase tracking-wider transition-colors focus:outline-none rounded-none">
+                    Solicitar Pedido
+                </button>
+                <p class="text-center text-xs text-text-muted mt-2 font-mono">
+                    *Precios y disponibilidad sujetos a confirmación final.
+                </p>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

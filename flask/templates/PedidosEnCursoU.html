@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>MACUIN Web - Pedidos en Curso (1280x1024)</title>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+
+    <style type="text/tailwindcss">
+
+        :root {
+            --bg-charcoal: #121212;
+            --surface-dark: #1A1A1A;
+            --primary-red: #FF1F1F;
+            --border-gray: #2A2A2A;
+            --text-gray: #888888;
+            --status-blue: #007BFF;
+            --status-yellow: #FFC107;
+        }
+
+        /* CORRECCIÓN DEL SCROLL */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        #app-canvas {
+            width: 1280px;
+            height: 1024px;
+            background-color: var(--bg-charcoal);
+            position: relative;
+            overflow-y: auto;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        .tech-font {
+            font-family: 'Orbitron', sans-serif;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 20;
+        }
+
+        .nav-link {
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #888888;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        .nav-link.active {
+            color: white;
+        }
+
+        #app-canvas::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #app-canvas::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        #app-canvas::-webkit-scrollbar-thumb {
+            background: #2A2A2A;
+        }
+
+        #app-canvas::-webkit-scrollbar-thumb:hover {
+            background: #FF1F1F;
+        }
+
+    </style>
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF1F1F",
+                        charcoal: "#121212",
+                        surface: "#1A1A1A",
+                        border: "#2A2A2A"
+                    }
+                }
+            }
+        };
+    </script>
+
+</head>
+
+<body class="dark text-white">
+
+    <div id="app-canvas">
+
+        <header class="bg-black border-b border-border w-full flex-shrink-0">
+
+            <div class="max-w-[1200px] mx-auto px-8">
+
+                <div class="flex justify-between items-center h-20">
+
+                    <div class="flex items-center gap-4">
+                        <span class="tech-font text-2xl font-black tracking-tighter">MACUIN</span>
+                    </div>
+
+                    <nav class="flex items-center space-x-12">
+
+                        <a class="nav-link" href="#">
+                            <span class="material-symbols-outlined text-lg">home</span> INICIO
+                        </a>
+
+                        <a class="nav-link" href="#">
+                            <span class="material-symbols-outlined text-lg">grid_view</span> CATÁLOGO
+                        </a>
+
+                        <a class="nav-link active" href="#">
+                            <span class="material-symbols-outlined text-lg">local_shipping</span> PEDIDOS
+                        </a>
+
+                        <a class="nav-link" href="#">
+                            <span class="material-symbols-outlined text-lg">person</span> PERFIL
+                        </a>
+
+                    </nav>
+
+                    <div class="flex items-center gap-6">
+
+                        <div class="w-10 h-10 bg-border overflow-hidden">
+                            <img class="w-full h-full object-cover grayscale"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJTxGGbKW9eTAjoqu5uNmFNj7dLtha7bM3JTNlxrgVM2OLbu9321eIR2cA5-50uij5Fm947N7r1CZZYmQsQx_d7TR3QsVlY-nwsG3aXYHugtQjX-RiP0Kd3AfnThA4NPMiW47XTDVy02WfXDxfydZftmxAU7MfrBAQTu8xM_aWelUhKgbRvzg-YJVx7dhP9KayG0uEWSa3pH8EBbFrm27iD6wm4RDXlFU0Gwex5uOLIjeOSSHJsVbdW1KeRg2I0wVbzWX4h0DWm-N_" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow w-full max-w-[1100px] mx-auto px-8 py-12">
+
+            <div class="flex items-end justify-between mb-12 border-b border-border pb-10">
+
+                <div>
+                    <h1 class="tech-font text-6xl font-black tracking-tighter leading-none text-white">
+                        PEDIDOS EN CURSO
+                    </h1>
+
+                    <div class="flex items-center gap-4 mt-6">
+                        <div class="h-[3px] w-12 bg-primary"></div>
+
+                        <p class="tech-font text-[12px] text-primary tracking-[0.4em] font-bold">
+                            LOGISTICS STATUS
+                        </p>
+                    </div>
+                </div>
+
+                <button
+                    class="flex items-center gap-3 px-8 py-3 border border-border tech-font text-[11px] font-bold hover:bg-white hover:text-black transition-all">
+                    <span class="material-symbols-outlined text-base">history</span>
+                    VER HISTORIAL
+                </button>
+
+            </div>
+
+            <div class="space-y-6">
+
+                <div class="bg-surface border border-border group">
+
+                    <div class="flex">
+
+                        <div
+                            class="w-64 h-64 bg-charcoal flex items-center justify-center overflow-hidden border-r border-border relative">
+
+                            <img class="object-cover w-full h-full opacity-30 grayscale group-hover:opacity-50 transition-opacity"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfnk16eQ12t-fXG4rx0vF_doOM3iVDRI0Vh6QutnzVPsZGy8-wCqBQfGG5Eg_8oh3yba_JMQNlo8vVl1756bl4UoM1OXRRqUx92-HJLluIeGnZybIr6PBgqdNxXPJbg63pGZhdmzWIxxRjmULP7pokeHg4ltXk5M4frVvQ8pcoqZ58PpRmdvqQ1ID6yPWlyc_-QpKqV5fuYhgIMZJtBKKUzCl-wJ47OslqszGYA9f9oykaZi7Lrrw-lSiqLq6gbP5J0StxXAr7FBKi" />
+
+                        </div>
+
+                        <div class="flex-1 p-10 flex flex-col justify-between">
+
+                            <div>
+
+                                <span
+                                    class="block text-[11px] text-[var(--text-gray)] uppercase tracking-widest font-mono mb-4">
+                                    REF ID: MQ-74210-ORD
+                                </span>
+
+                                <h2 class="tech-font text-4xl font-black text-white">
+                                    KIT DISCOS CERÁMICOS
+                                </h2>
+
+                                <div class="flex items-center gap-3 mt-6">
+
+                                    <div class="w-3 h-3 bg-[var(--status-blue)]"></div>
+
+                                    <span
+                                        class="tech-font text-[13px] text-[var(--status-blue)] font-bold tracking-widest">
+                                        EN CAMINO
+                                    </span>
+
+                                </div>
+                            </div>
+
+                            <div class="flex items-end justify-between mt-auto">
+
+                                <div class="space-y-2">
+
+                                    <p class="text-[10px] uppercase tracking-[0.2em] text-[var(--text-gray)] font-bold">
+                                        FECHA ESTIMADA
+                                    </p>
+
+                                    <p class="tech-font text-3xl text-white">
+                                        14 OCT, 2023
+                                    </p>
+
+                                </div>
+
+                                <button
+                                    class="tech-font text-primary hover:text-white transition-colors text-[11px] font-black tracking-[0.2em] border-b-2 border-primary pb-1">
+                                    CANCELAR PEDIDO
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
