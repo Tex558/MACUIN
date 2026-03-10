@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Web de Autopartes MACUIN</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#E62E2D",
+                        darkBg: "#121418",
+                        cardBg: "#1A1D23"
+                    },
+                    fontFamily: {
+                        display: ["Chakra Petch", "sans-serif"],
+                        body: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .title-font {
+            font-family: 'Chakra Petch', sans-serif;
+            font-style: italic;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-darkBg text-gray-900 dark:text-gray-200 min-h-screen">
+
+    <header class="sticky top-0 z-50 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 shadow">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <h1 class="text-3xl font-bold title-font tracking-wide text-white">CATÁLOGO</h1>
+
+            <nav class="hidden md:flex gap-6">
+                <a href="#" class="text-primary border-b-2 border-primary font-bold title-font">TODO</a>
+                <a href="#" class="text-gray-400 hover:text-white title-font font-bold">FRENOS</a>
+                <a href="#" class="text-gray-400 hover:text-white title-font font-bold">MOTOR</a>
+                <a href="#" class="text-gray-400 hover:text-white title-font font-bold">SUSPENSIÓN</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <div class="hidden lg:flex items-center bg-gray-100 dark:bg-cardBg rounded-lg px-3 py-2 border border-gray-300 dark:border-gray-700">
+                    <span class="material-icons text-gray-500 mr-2">search</span>
+                    <input type="text" placeholder="Buscar..." class="bg-transparent outline-none text-sm w-52">
+                </div>
+
+                <button class="text-gray-400 hover:text-primary">
+                    <span class="material-icons">shopping_cart</span>
+                </button>
+
+                <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIL8NFrt3yeOm72xzhlFIXDxAD7rnnuUqE-QnjhMOxobLosDT3wwY8srMMd7EHrL6WV2DJm3kv8rOQJuRk-q02kXf_HqjxG6RBd8cRXRX1mYmlb-rn_bn6wMPMBDGdcM3vJphu-5Lp71uUjQbrNRTNnlkt-QPNNlCgX9jRXU8bALmAbCYiU9Z5QQGDL7e7PJq6RB-Rlyt3-haigtnBziNq-w-V9u8ZEbId1tWxEoK2qP3npy82ZCP3R-mLh-ndDIckbo_uwgWBuZuv"
+                    alt="Perfil"
+                    class="w-10 h-10 rounded-full object-cover border border-gray-400"
+                >
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div class="lg:hidden mb-6">
+            <div class="flex items-center bg-white dark:bg-cardBg rounded-lg px-3 py-3 border border-gray-300 dark:border-gray-700">
+                <span class="material-icons text-gray-500 mr-2">search</span>
+                <input type="text" placeholder="Buscar por nombre o ID..." class="bg-transparent outline-none text-sm w-full">
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
+            <h2 class="text-2xl font-bold title-font text-white">RESULTADOS RECIENTES</h2>
+
+            <div class="flex gap-3">
+                <button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-cardBg border border-gray-300 dark:border-gray-700 rounded-lg text-sm">
+                    <span class="material-icons text-base">filter_list</span>
+                    Filtros
+                </button>
+                <button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-cardBg border border-gray-300 dark:border-gray-700 rounded-lg text-sm">
+                    <span class="material-icons text-base">sort</span>
+                    Ordenar
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="bg-white dark:bg-cardBg rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow">
+                <div class="relative h-48 bg-gray-200 dark:bg-gray-900 flex items-center justify-center p-4">
+                    <span class="absolute top-3 right-3 text-xs bg-green-700 text-white px-2 py-1 rounded">Disponible</span>
+                    <img
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZt8zT3xGvriJQ6Uq60LB9BQxwCZUcSwyt5vK_-DhdvsJSG1eSnSxB6qMoE2lzTtL4gJrofsQt8MqdjwAi2hKChoik01xT0uga8vkZyjU5o2scLmn3R2D-c0VjduWLI3ctqZ6MJdrRWHIQvSxOeMI4FgFO48F5nxmc0PMjtJy3thE0BGAACcFMN76cWNAfwK5tU6dnC6Io1YZcqTltx78hNYxwClfaIDhoTsmsnOOH8EmIMFm9JNjgEz3AT9_qsy0G0NfZdtyc_4-9"
+                        alt="Kit Discos Cerámicos"
+                        class="h-full object-contain"
+                    >
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold title-font text-white">KIT DISCOS CERÁMICOS</h3>
+                        <div class="text-right">
+                            <p class="text-lg font-bold text-blue-400">$4,250</p>
+                            <span class="text-xs text-gray-400">MXN + IVA</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-4">ID: MQ-29402-BRK</p>
+
+                    <div class="flex gap-3">
+                        <button class="flex-1 bg-primary hover:bg-red-700 text-white py-2 rounded-lg font-bold title-font">
+                            Añadir
+                        </button>
+                        <button class="px-3 border border-gray-400 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <span class="material-icons">add</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-cardBg rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow">
+                <div class="relative h-48 bg-gray-200 dark:bg-gray-900 flex items-center justify-center p-4">
+                    <span class="absolute top-3 right-3 text-xs bg-orange-600 text-white px-2 py-1 rounded">Stock bajo</span>
+                    <img
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8avO_TCXww3TZPwKZfHe46B__HQud07eMo78RrWZW_ObWJ7LavVosPIOE6RnSibuXLh_2uurueJYMp-pw72ZmPYfatUPBe483HwuRwSJS12R-rSmGDkijT14CoOZWIpDQpKT6Dq7aUqkcx9N118yjDjNl_JEuXHWDZ8G3Ik1unoGLTt9vNuDtx0wvIp0sJvKSmd9z--CeX3dZJ5ddbah4kUfCXdZDSoskulSIjwbUze1lpctwlgQdd5gykb2GCGah9G5XsHvi1fvn"
+                        alt="Filtro de Alto Flujo"
+                        class="h-full object-contain"
+                    >
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold title-font text-white">FILTRO DE ALTO FLUJO</h3>
+                        <div class="text-right">
+                            <p class="text-lg font-bold text-blue-400">$890</p>
+                            <span class="text-xs text-gray-400">MXN + IVA</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-4">ID: MQ-11055-MTR</p>
+
+                    <div class="flex gap-3">
+                        <button class="flex-1 bg-primary hover:bg-red-700 text-white py-2 rounded-lg font-bold title-font">
+                            Añadir
+                        </button>
+                        <button class="px-3 border border-gray-400 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <span class="material-icons">add</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-cardBg rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow opacity-80">
+                <div class="relative h-48 bg-gray-200 dark:bg-gray-900 flex items-center justify-center">
+                    <span class="bg-gray-800 text-gray-300 px-4 py-1 rounded title-font text-sm">AGOTADO</span>
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold title-font text-gray-400">ALTERNADOR REFORZADO</h3>
+                        <p class="text-lg font-bold text-gray-500">$2,150</p>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-4">ID: MQ-88392-ELE</p>
+
+                    <button class="w-full bg-gray-300 dark:bg-gray-800 text-gray-500 py-2 rounded-lg font-bold title-font cursor-not-allowed" disabled>
+                        Sin Stock
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-cardBg rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow">
+                <div class="relative h-48 bg-gray-200 dark:bg-gray-900 flex items-center justify-center p-4">
+                    <span class="absolute top-3 right-3 text-xs bg-green-700 text-white px-2 py-1 rounded">Disponible</span>
+                    <img
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3DaG3K2R93hZ5yzUotDNKann23GT2E-xi1tkRDolYO6V-HwQxGR4Hg5F3-JMguAQEXEF7b9NWJPX3RK8_n8plJbwp5uiItQz4BWef_SeP0UootYMSER4n056ZvcFKEaU0CycCjc50g0hVk8qVINJZVsnkhBrVuUuMGnDNswTTidsph_-CMTMx4c8r9Vwwtbgdvv_vhsUw6l0312I7MK7KfTT_uyBl8Rpan09Ujifq52g0NC4Bg9QS5EbrX9rIVP_cpC9KFx-y38zO"
+                        alt="Suspensión Deportiva"
+                        class="h-full object-contain"
+                    >
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold title-font text-white">SUSPENSIÓN DEPORTIVA</h3>
+                        <div class="text-right">
+                            <p class="text-lg font-bold text-blue-400">$6,800</p>
+                            <span class="text-xs text-gray-400">MXN + IVA</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-4">ID: MQ-44201-SUS</p>
+
+                    <div class="flex gap-3">
+                        <button class="flex-1 bg-primary hover:bg-red-700 text-white py-2 rounded-lg font-bold title-font">
+                            Añadir
+                        </button>
+                        <button class="px-3 border border-gray-400 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <span class="material-icons">add</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
