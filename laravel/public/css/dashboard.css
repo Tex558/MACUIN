@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b0c10;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Barra Superior (Topbar) --- */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b0c10;
+    padding: 1.5rem 3rem;
+    border-bottom: 1px solid #1f2330;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.page-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.operator-text {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.op-label {
+    font-size: 0.6rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.op-name {
+    font-size: 0.85rem;
+    color: #e2e8f0;
+}
+
+.user-icon {
+    background-color: #1a1e2b;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    color: #a0aec0;
+    cursor: pointer;
+}
+
+/* --- Contenedor Principal --- */
+.main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* --- Sección de la Tabla --- */
+.table-section {
+    flex: 3;
+    padding: 2rem 3rem;
+    background-color: #0b0c10;
+    overflow-y: auto;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .orders-table th {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 0.7rem;
+        color: #6b7280;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: left;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #1f2330;
+    }
+
+    .orders-table td {
+        padding: 1.5rem 0;
+        font-size: 0.85rem;
+        color: #cbd5e1;
+        border-bottom: 1px solid #151822;
+    }
+
+.badge {
+    padding: 0.3rem 0.6rem;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-green {
+    background-color: #064e3b;
+    color: #34d399;
+}
+
+.badge-blue {
+    background-color: #1e3a8a;
+    color: #60a5fa;
+}
+
+.badge-gray {
+    background-color: #374151;
+    color: #9ca3af;
+}
+
+.action-link {
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+    .action-link:hover {
+        color: #ffffff;
+    }
+
+/* --- Sección del Sidebar (Filtros) --- */
+.sidebar-filters {
+    flex: 1;
+    max-width: 350px;
+    background-color: #0e1015;
+    padding: 2rem;
+    border-left: 1px solid #1f2330;
+}
+
+.filters-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    letter-spacing: 1px;
+}
+
+.filter-group {
+    margin-bottom: 2rem;
+}
+
+.filter-label {
+    display: block;
+    font-size: 0.65rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+}
+
+.filter-input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #151822;
+    border: 1px solid #1f2330;
+    border-radius: 4px;
+    padding: 0.6rem 1rem;
+}
+
+    .filter-input-wrapper i {
+        color: #4a5568;
+        margin-right: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+.filter-input {
+    background: transparent;
+    border: none;
+    color: #a0aec0;
+    width: 100%;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+    .filter-input::placeholder {
+        color: #4a5568;
+    }
+
+select.filter-input {
+    appearance: none;
+    cursor: pointer;
+}
+
+.btn-filtrar {
+    width: 100%;
+    background-color: #e61a23;
+    color: #ffffff;
+    text-align: center;
+    padding: 0.8rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-filtrar:hover {
+        background-color: #c5141c;
+    }

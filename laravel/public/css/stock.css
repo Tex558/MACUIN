@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b0c10;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar (Barra Lateral) --- */
+.sidebar {
+    width: 250px;
+    background-color: #0e1015;
+    border-right: 1px solid #1f2330;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-logo {
+    padding: 1.5rem 2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid #1f2330;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding-top: 2rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+    .nav-item i {
+        width: 25px;
+        font-size: 1rem;
+    }
+
+    .nav-item:hover {
+        color: #ffffff;
+        background-color: #151822;
+    }
+
+    .nav-item.active {
+        background-color: #e61a23;
+        color: #ffffff;
+    }
+
+.sidebar-footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid #1f2330;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-avatar {
+    background-color: #374151;
+    color: #cbd5e1;
+    width: 35px;
+    height: 35px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 0.8rem;
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+.user-role {
+    font-size: 0.6rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Contenido Principal --- */
+.main-content {
+    flex: 1;
+    padding: 2.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.page-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #151822;
+    border: 1px solid #1f2330;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    width: 250px;
+}
+
+    .search-box i {
+        color: #4a5568;
+        margin-right: 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .search-box input {
+        background: transparent;
+        border: none;
+        color: #a0aec0;
+        width: 100%;
+        font-size: 0.8rem;
+        outline: none;
+    }
+
+.btn-add {
+    background-color: #e61a23;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-add:hover {
+        background-color: #c5141c;
+    }
+
+/* --- Tabla de Stock --- */
+.stock-table-container {
+    background-color: #0e1015;
+    border-radius: 4px;
+    border: 1px solid #1f2330;
+    overflow: hidden;
+}
+
+.stock-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .stock-table th {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 0.65rem;
+        color: #6b7280;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: left;
+        padding: 1.5rem;
+        border-bottom: 1px solid #1f2330;
+    }
+
+    .stock-table td {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid #151822;
+        vertical-align: middle;
+    }
+
+.part-image {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .part-image i {
+        color: #000000;
+        font-size: 1.5rem;
+    }
+
+.sku-text {
+    font-size: 0.8rem;
+    color: #a0aec0;
+}
+
+.part-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    margin-bottom: 0.2rem;
+}
+
+.part-category {
+    font-size: 0.65rem;
+    color: #6b7280;
+}
+
+.stock-current {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: #a0aec0;
+}
+
+.stock-input {
+    background-color: #0b0c10;
+    border: 1px solid #e61a23;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    width: 60px;
+    padding: 0.4rem;
+    text-align: center;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* --- Bottom Actions --- */
+.bottom-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: #0e1015;
+    border-top: 1px solid #1f2330;
+}
+
+.btn-cancel {
+    background-color: #4a5568;
+    color: #ffffff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 4px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-save {
+    background-color: #e61a23;
+    color: #ffffff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 4px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-cancel:hover {
+    background-color: #2d3748;
+}
+
+.btn-save:hover {
+    background-color: #c5141c;
+}

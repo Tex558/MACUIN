@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b0c10;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 2.5rem;
+    color: #ffffff;
+}
+
+.login-card {
+    background-color: #12141c;
+    padding: 3rem;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.65rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #2d3748;
+    padding-bottom: 0.5rem;
+}
+
+    .input-wrapper i {
+        color: #4a5568;
+        font-size: 0.9rem;
+        width: 20px;
+    }
+
+.form-input {
+    background: transparent;
+    border: none;
+    color: #a0aec0;
+    width: 100%;
+    padding: 0 0.5rem;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+    .form-input::placeholder {
+        color: #4a5568;
+    }
+
+.eye-icon {
+    cursor: pointer;
+}
+
+.forgot-password {
+    display: block;
+    font-size: 0.65rem;
+    color: #4a5568;
+    text-decoration: none;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+    .forgot-password:hover {
+        color: #a0aec0;
+    }
+
+.btn-ingresar {
+    display: block;
+    width: 100%;
+    background-color: #e61a23;
+    color: #ffffff;
+    text-align: center;
+    padding: 0.8rem;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-ingresar:hover {
+        background-color: #c5141c;
+    }
