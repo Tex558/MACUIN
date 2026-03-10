@@ -1,30 +1,29 @@
-FROM php:8.1-fpm
+FROM php:8.1-cli
 
 WORKDIR /var/www
 
-# Dependencias y la extensión pdo_mysql necesaria para conectar a la BD
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
     zip \
     git \
-    unzip
+    unzip \
+    curl
 
-# Extensiones de PHP incluyendo pdo_mysql
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg
 RUN docker-php-ext-install gd pdo_mysql
 
 COPY . /var/www/
 
-RUN chown -R www-data:www-data /var/www
-RUN chmod -R 755 /var/www
-
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
-RUN composer install --no-security-blocking --no-interaction --no-scripts
+RUN composer install --no-interaction
+
+RUN chown -R www-data:www-data /var/www
+RUN chmod -R 775 /var/www/storage /var/www/bootstrap/cache || true
 
 EXPOSE 5020
 
-CMD ["php-fpm"]
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=5020"]
